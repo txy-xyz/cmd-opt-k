@@ -1,0 +1,47 @@
+{
+  "name": "terminal-copy",
+  "displayName": "终端复制助手",
+  "description": "将编辑器选中片段及位置信息发送到当前终端",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:terminalCopy.copySelectionToTerminal"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "terminalCopy.copySelectionToTerminal",
+        "title": "复制到终端（含路径行号）"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "terminalCopy.copySelectionToTerminal",
+          "group": "navigation@9",
+          "when": "editorHasSelection"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "echo '未配置 ESLint'",
+    "test": "echo '未配置测试'"
+  },
+  "devDependencies": {
+    "@types/node": "^18.18.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  }
+}
+
