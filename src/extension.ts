@@ -1,10 +1,10 @@
 import * as vscode from 'vscode';
 
-// 创建输出通道用于日志记录
+// Create output channel for logging
 let outputChannel: vscode.OutputChannel;
 
 /**
- * 记录日志到输出通道
+ * Log messages to the output channel
  */
 function log(message: string) {
   const timestamp = new Date().toLocaleTimeString();
@@ -17,7 +17,7 @@ function log(message: string) {
  * Called when the extension is activated
  */
 export function activate(context: vscode.ExtensionContext) {
-  // 创建输出通道
+  // Create output channel for logging
   outputChannel = vscode.window.createOutputChannel('Terminal Copy Helper');
   context.subscriptions.push(outputChannel);
   

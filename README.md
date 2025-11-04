@@ -12,7 +12,7 @@ A lightweight VS Code extension that sends selected text snippets along with fil
 
 1. Open your target project in VS Code and ensure there's at least one active terminal
 2. Select the code/text you want to share or execute
-3. Right-click and choose `Copy to Terminal (with path and line numbers)`, or use the keyboard shortcut `Cmd + Option + K` (macOS) / `Ctrl + Alt + K` (Windows/Linux), or search for the same command in the command palette
+3. Right-click and choose `Copy to Terminal (with path and line numbers)`, or use the keyboard shortcut `Cmd + Alt + K` (macOS) / `Ctrl + Alt + K` (Windows/Linux), or search for the same command in the command palette
 4. Check the automatically filled content in the terminal
 
 ## Development and Debugging

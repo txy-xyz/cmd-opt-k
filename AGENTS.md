@@ -73,7 +73,7 @@ Terminal Copy Helper is a lightweight VS Code extension that sends selected text
 3. **User Interface Integration**
    - Right-click menu integration
    - Command palette support
-   - Keyboard shortcut: `Cmd + Option + K` (macOS) / `Ctrl + Alt + K` (Windows/Linux)
+   - Keyboard shortcut: `Cmd + Alt + K` (macOS) / `Ctrl + Alt + K` (Windows/Linux)
 
 ## Deployment and Distribution
 
@@ -84,6 +84,7 @@ Terminal Copy Helper is a lightweight VS Code extension that sends selected text
 3. **Installation**: Install locally or publish to VS Code Marketplace
 
 #### Packaging Steps
+
 ```bash
 # Install VSCE globally (if not already installed)
 npm install -g @vscode/vsce
@@ -99,6 +100,7 @@ code --install-extension terminal-copy-0.0.1.vsix
 ```
 
 #### Publishing Steps
+
 - Update the `publisher` field in `package.json` with your actual publisher ID
 - Create a publisher account on the VS Code Marketplace
 - Use `vsce publish` to publish to the marketplace (requires authentication)
@@ -116,6 +118,6 @@ code --install-extension terminal-copy-0.0.1.vsix
 - Integrate with more IDEs and terminal tools
 - Add configuration options and user preferences
 
----
+## Notes
 
-_This document was generated with AI assistance, describing the project's technical architecture and development toolchain._
+- Keep use English for all documentation and comments.
