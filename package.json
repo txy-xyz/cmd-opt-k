@@ -1,7 +1,7 @@
 {
   "name": "terminal-copy",
-  "displayName": "终端复制助手",
-  "description": "将编辑器选中片段及位置信息发送到当前终端",
+  "displayName": "Terminal Copy Helper",
+  "description": "Send selected text snippets and location info to the active terminal",
   "version": "0.0.1",
   "publisher": "your-name",
   "engines": {
@@ -18,7 +18,7 @@
     "commands": [
       {
         "command": "terminalCopy.copySelectionToTerminal",
-        "title": "复制到终端（含路径行号）"
+        "title": "Copy to Terminal (with path and line numbers)"
       }
     ],
     "menus": {
@@ -35,8 +35,8 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "lint": "echo '未配置 ESLint'",
-    "test": "echo '未配置测试'"
+    "lint": "echo 'ESLint not configured'",
+    "test": "echo 'Tests not configured'"
   },
   "devDependencies": {
     "@types/node": "^18.18.0",

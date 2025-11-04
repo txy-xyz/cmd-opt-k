@@ -1,31 +1,31 @@
-# 终端复制助手
+# Terminal Copy Helper
 
-在 VS Code 中选中文本后，将片段与文件路径、行号信息一并发送到当前激活终端的轻量扩展。
+A lightweight VS Code extension that sends selected text snippets along with file path and line number information to the currently active terminal.
 
-## 功能特性
+## Features
 
-- 支持从活动编辑器中读取选中的一段或多段文本
-- 自动生成相对路径与起止行号描述
-- 使用三引号包裹原始文本，便于终端快速粘贴或共享
+- Reads one or multiple selected text segments from the active editor
+- Automatically generates relative path and start/end line number descriptions
+- Wraps raw text in triple quotes for easy terminal pasting or sharing
 
-## 使用说明
+## Usage
 
-1. 在 VS Code 中打开目标项目，确保已经存在至少一个激活的终端
-2. 选中想要分享或执行的代码/文本
-3. 右键选择 `复制到终端（含路径行号）`，或在命令面板中搜索同名命令
-4. 在终端查看已自动填充的内容
+1. Open your target project in VS Code and ensure there's at least one active terminal
+2. Select the code/text you want to share or execute
+3. Right-click and choose `Copy to Terminal (with path and line numbers)`, or search for the same command in the command palette
+4. Check the automatically filled content in the terminal
 
-## 开发调试
+## Development and Debugging
 
 ```bash
 npm install
 npm run watch
 ```
 
-接着使用 VS Code 的 `运行扩展` 调试配置，即可在新的 Extension Host 实例中验证功能。
+Then use VS Code's `Run Extension` debug configuration to test the functionality in a new Extension Host instance.
 
-## 发布准备
+## Publishing Preparation
 
-- 在 `package.json` 中更新 `publisher` 字段为实际发布者 ID
-- 使用 `npm run compile` 生成 `dist` 目录
-- 通过 `vsce package` 或 `@vscode/vsce` 工具创建 VSIX 包
+- Update the `publisher` field in `package.json` with the actual publisher ID
+- Use `npm run compile` to generate the `dist` directory
+- Create a VSIX package using `vsce package` or the `@vscode/vsce` tool
