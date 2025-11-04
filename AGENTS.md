@@ -1,36 +1,36 @@
-# AI 代理和自动化工具
+# AI Agents and Automation Tools
 
-## 项目概述
+## Project Overview
 
-Terminal Copy Helper 是一个轻量级的 VS Code 扩展，用于将选中的文本片段连同文件路径和行号信息发送到当前活动的终端。
+Terminal Copy Helper is a lightweight VS Code extension that sends selected text snippets along with file path and line number information to the currently active terminal.
 
-## 技术栈
+## Technology Stack
 
-- **编程语言**: TypeScript
-- **平台**: Visual Studio Code 扩展
-- **构建工具**: TypeScript 编译器
-- **包管理**: npm
+- **Programming Language**: TypeScript
+- **Platform**: Visual Studio Code Extension
+- **Build Tool**: TypeScript Compiler
+- **Package Management**: npm
 
-## 开发工具链
+## Development Toolchain
 
-### 核心工具
+### Core Tools
 
-1. **TypeScript 编译器**
+1. **TypeScript Compiler**
 
-   - 版本: ^5.3.3
-   - 用于将 TypeScript 代码编译为 JavaScript
-   - 配置: `tsconfig.json`
+   - Version: ^5.3.3
+   - Used to compile TypeScript code to JavaScript
+   - Configuration: `tsconfig.json`
 
-2. **Node.js 类型定义**
+2. **Node.js Type Definitions**
 
-   - 版本: ^18.18.0
-   - 提供 Node.js API 的类型定义
+   - Version: ^18.18.0
+   - Provides type definitions for Node.js APIs
 
-3. **VS Code API 类型定义**
-   - 版本: ^1.85.0
-   - 提供 VS Code 扩展 API 的类型定义
+3. **VS Code API Type Definitions**
+   - Version: ^1.85.0
+   - Provides type definitions for VS Code Extension APIs
 
-### 开发脚本
+### Development Scripts
 
 ```json
 {
@@ -42,59 +42,80 @@ Terminal Copy Helper 是一个轻量级的 VS Code 扩展，用于将选中的�
 }
 ```
 
-## AI 辅助开发
+## AI-Assisted Development
 
-### 代码生成和优化
+### Code Generation and Optimization
 
-- **智能代码补全**: 使用 AI 辅助生成 TypeScript 代码
-- **错误修复**: 自动检测和修复代码问题
-- **文档生成**: 自动生成代码注释和文档
+- **Intelligent Code Completion**: Use AI to generate TypeScript code
+- **Error Fixing**: Automatically detect and fix code issues
+- **Documentation Generation**: Automatically generate code comments and documentation
 
-### 项目管理
+### Project Management
 
-- **任务规划**: 使用 AI 分析需求并规划开发任务
-- **代码审查**: AI 辅助进行代码质量检查
-- **依赖管理**: 智能推荐和更新项目依赖
+- **Task Planning**: Use AI to analyze requirements and plan development tasks
+- **Code Review**: AI-assisted code quality checking
+- **Dependency Management**: Intelligent recommendation and updating of project dependencies
 
-## 扩展功能
+## Extension Features
 
-### 核心特性
+### Core Features
 
-1. **文本选择读取**
+1. **Text Selection Reading**
 
-   - 支持单个或多个选中文本段
-   - 自动提取相对路径和行号信息
+   - Supports single or multiple selected text segments
+   - Automatically extracts relative paths and line number information
 
-2. **终端集成**
+2. **Terminal Integration**
 
-   - 自动将格式化的内容发送到活动终端
-   - 使用三重引号包装原始文本，便于粘贴和分享
+   - Automatically sends formatted content to the active terminal
+   - Wraps raw text in triple quotes for easy pasting and sharing
 
-3. **用户界面集成**
-   - 右键菜单集成
-   - 命令面板支持
+3. **User Interface Integration**
+   - Right-click menu integration
+   - Command palette support
+   - Keyboard shortcut: `Cmd + Option + K` (macOS) / `Ctrl + Alt + K` (Windows/Linux)
 
-## 部署和分发
+## Deployment and Distribution
 
-### 构建流程
+### Build Process
 
-1. **编译**: 使用 TypeScript 编译器生成 JavaScript 代码
-2. **打包**: 使用 VSCE (Visual Studio Code Extension) 工具创建 .vsix 包
-3. **发布**: 通过 Visual Studio Code Marketplace 或手动安装
+1. **Compilation**: Use TypeScript compiler to generate JavaScript code
+2. **Packaging**: Use VSCE (Visual Studio Code Extension) tool to create .vsix package
+3. **Installation**: Install locally or publish to VS Code Marketplace
 
-### 质量保证
+#### Packaging Steps
+```bash
+# Install VSCE globally (if not already installed)
+npm install -g @vscode/vsce
 
-- **类型检查**: TypeScript 静态类型检查
-- **代码格式化**: 保持一致的代码风格
-- **测试**: 单元测试和集成测试（计划中）
+# Compile the extension
+npm run compile
 
-## 未来扩展计划
+# Create the VSIX package
+vsce package
 
-- 添加更多输出格式选项
-- 支持自定义模板
-- 集成更多的 IDE 和终端工具
-- 添加配置选项和用户偏好设置
+# Install locally (optional)
+code --install-extension terminal-copy-0.0.1.vsix
+```
+
+#### Publishing Steps
+- Update the `publisher` field in `package.json` with your actual publisher ID
+- Create a publisher account on the VS Code Marketplace
+- Use `vsce publish` to publish to the marketplace (requires authentication)
+
+### Quality Assurance
+
+- **Type Checking**: TypeScript static type checking
+- **Code Formatting**: Maintain consistent code style
+- **Testing**: Unit tests and integration tests (planned)
+
+## Future Expansion Plans
+
+- Add more output format options
+- Support custom templates
+- Integrate with more IDEs and terminal tools
+- Add configuration options and user preferences
 
 ---
 
-_此文档由 AI 辅助生成，描述了项目的技术架构和开发工具链。_
+_This document was generated with AI assistance, describing the project's technical architecture and development toolchain._

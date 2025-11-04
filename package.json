@@ -21,6 +21,14 @@
         "title": "Copy to Terminal (with path and line numbers)"
       }
     ],
+    "keybindings": [
+      {
+        "command": "terminalCopy.copySelectionToTerminal",
+        "key": "cmd+alt+k",
+        "mac": "cmd+alt+k",
+        "when": "editorHasSelection"
+      }
+    ],
     "menus": {
       "editor/context": [
         {
