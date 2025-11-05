@@ -29,6 +29,7 @@ Then use VS Code's `Run Extension` debug configuration to test the functionality
 ### Installing the Extension
 
 #### Method 1: From VS Code Marketplace
+
 1. Open VS Code
 2. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
 3. Search for "Terminal Copy Helper"
@@ -37,11 +38,13 @@ Then use VS Code's `Run Extension` debug configuration to test the functionality
 #### Method 2: Manual Installation from VSIX Package
 
 ##### Step 1: Install VSCE Tool (if not already installed)
+
 ```bash
 npm install -g @vscode/vsce
 ```
 
 ##### Step 2: Package the Extension
+
 ```bash
 # Compile the TypeScript code
 npm run compile
@@ -53,12 +56,14 @@ vsce package
 This will generate a `.vsix` file (e.g., `terminal-copy-0.0.1.vsix`) in the project root.
 
 ##### Step 3: Install the VSIX Package
+
 ```bash
 # Install locally in VS Code
 code --install-extension terminal-copy-0.0.1.vsix
 ```
 
 Or manually:
+
 1. Open VS Code
 2. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
 3. Click the "..." menu in the top-right corner

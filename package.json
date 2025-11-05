@@ -4,14 +4,16 @@
   "description": "Send selected text snippets and location info to the active terminal",
   "version": "0.0.1",
   "publisher": "your-name",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/terminal-copy-helper.git"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
     "Other"
-  ],
-  "activationEvents": [
-    "onCommand:terminalCopy.copySelectionToTerminal"
   ],
   "main": "./dist/extension.js",
   "contributes": {
