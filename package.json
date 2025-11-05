@@ -1,9 +1,9 @@
 {
   "name": "code-to-cli",
-  "displayName": "Terminal Copy Helper",
+  "displayName": "Code to CLI",
   "description": "Send selected text snippets and location info to the active terminal",
   "version": "0.0.1",
-  "publisher": "your-name",
+  "publisher": "yangtian20231",
   "repository": {
     "type": "git",
     "url": "https://github.com/txy-xyz/cmd-opt-k.git"
