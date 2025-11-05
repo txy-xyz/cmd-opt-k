@@ -62,7 +62,7 @@ export function activate(context: vscode.ExtensionContext) {
           const normalizedText = rawText.endsWith('\n') ? rawText : `${rawText}\n`;
 
           log(`  - Selection: ${relativePath} (${rangeLabel})`);
-          return `File: ${relativePath} (${rangeLabel})\n"""\n${normalizedText}"""`;
+          return `File: ${relativePath} (${rangeLabel})\nContent as below:\n"""\n${normalizedText}"""`;
         })
         .join('\n\n');
 
