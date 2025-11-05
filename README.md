@@ -15,6 +15,28 @@ A lightweight VS Code extension that sends selected text snippets along with fil
 3. Right-click and choose `Copy to Terminal (with path and line numbers)`, or use the keyboard shortcut `Cmd + Alt + K` (macOS) / `Ctrl + Alt + K` (Windows/Linux), or search for the same command in the command palette
 4. Check the automatically filled content in the terminal
 
+## Compatible CLI Tools
+
+This extension is designed to work seamlessly with various AI-powered CLI coding assistants, allowing you to easily share code snippets with contextual information (file path and line numbers) to the terminal. Here are some popular CLI tools that benefit from this extension:
+
+### Agentic AI Coding Assistants
+
+- **GitHub Copilot CLI**: Send code snippets with path and line information for AI-assisted code review, debugging, and PR creation
+- **Claude Code**: Share code context for complex refactoring, multi-file operations, and automated testing
+- **OpenAI Codex CLI**: Provide code with location info for local AI-assisted development and iterative improvements
+- **Google Gemini CLI**: Transfer code snippets for AI-powered code generation and documentation with real-time web search integration
+- **Amazon Q Developer CLI**: Share code for AWS-specific development assistance and cloud resource optimization
+- **Cursor CLI**: Send contextual code information for cross-file modifications and automated testing
+- **Qodo Command (Gen CLI)**: Provide code context for custom AI agent workflows and automated code reviews
+
+### Open Source CLI Coding Assistants
+
+- **aider**: Share code snippets for AI pair programming, automatic git commits, and cross-file refactoring
+- **OpenCode**: Send code with path information for terminal-based AI coding with LSP integration
+- **smol-developer**: Provide code context for AI-generated project scaffolding and prototyping
+
+This extension essentially provides a keyboard shortcut and context menu option to insert selected code snippets into the active terminal with path and line number information. Since it simply outputs formatted text to the terminal, it works with any CLI tool or command that can process text input, including all the AI coding assistants mentioned above. The triple-quote formatting makes it easy to paste and share multi-line code snippets in any terminal environment.
+
 ## Development and Debugging
 
 ```bash
