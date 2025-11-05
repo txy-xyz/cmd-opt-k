@@ -75,13 +75,13 @@ npm run compile
 vsce package
 ```
 
-This will generate a `.vsix` file (e.g., `terminal-copy-0.0.1.vsix`) in the project root.
+This will generate a `.vsix` file (e.g., `code-to-cli-0.0.1.vsix`) in the project root.
 
 ##### Step 3: Install the VSIX Package
 
 ```bash
 # Install locally in VS Code
-code --install-extension terminal-copy-0.0.1.vsix
+code --install-extension code-to-cli-0.0.1.vsix
 ```
 
 Or manually:

@@ -96,7 +96,7 @@ npm run compile
 vsce package
 
 # Install locally (optional)
-code --install-extension terminal-copy-0.0.1.vsix
+code --install-extension code-to-cli-0.0.1.vsix
 ```
 
 #### Publishing Steps

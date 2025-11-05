@@ -1,5 +1,5 @@
 {
-  "name": "terminal-copy",
+  "name": "code-to-cli",
   "displayName": "Terminal Copy Helper",
   "description": "Send selected text snippets and location info to the active terminal",
   "version": "0.0.1",
@@ -13,7 +13,8 @@
     "vscode": "^1.85.0"
   },
   "categories": [
-    "Other"
+    "AI",
+    "Keymaps"
   ],
   "main": "./dist/extension.js",
   "contributes": {
