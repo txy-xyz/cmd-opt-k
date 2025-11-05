@@ -21,7 +21,7 @@
     "commands": [
       {
         "command": "terminalCopy.copySelectionToTerminal",
-        "title": "Copy to Terminal (with path and line numbers)"
+        "title": "Code to CLI"
       }
     ],
     "keybindings": [
