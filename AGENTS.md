@@ -1,36 +1,36 @@
-# AI Agents and Automation Tools
+# AI 代理和自动化工具
 
-## Project Overview
+## 项目概述
 
-Terminal Copy Helper is a lightweight VS Code extension that sends selected text snippets along with file path and line number information to the currently active terminal.
+代码复制助手是一个轻量级的 VS Code 扩展，将选中的代码片段及其文件路径和行号信息复制到剪贴板。
 
-## Technology Stack
+## 技术栈
 
-- **Programming Language**: TypeScript
-- **Platform**: Visual Studio Code Extension
-- **Build Tool**: TypeScript Compiler
-- **Package Management**: npm
+- **编程语言**: TypeScript
+- **平台**: Visual Studio Code 扩展
+- **构建工具**: TypeScript 编译器
+- **包管理**: npm
 
-## Development Toolchain
+## 开发工具链
 
-### Core Tools
+### 核心工具
 
-1. **TypeScript Compiler**
+1. **TypeScript 编译器**
 
-   - Version: ^5.3.3
-   - Used to compile TypeScript code to JavaScript
-   - Configuration: `tsconfig.json`
+   - 版本: ^5.3.3
+   - 用于将 TypeScript 代码编译为 JavaScript
+   - 配置文件: `tsconfig.json`
 
-2. **Node.js Type Definitions**
+2. **Node.js 类型定义**
 
-   - Version: ^18.18.0
-   - Provides type definitions for Node.js APIs
+   - 版本: ^18.18.0
+   - 提供 Node.js API 的类型定义
 
-3. **VS Code API Type Definitions**
-   - Version: ^1.85.0
-   - Provides type definitions for VS Code Extension APIs
+3. **VS Code API 类型定义**
+   - 版本: ^1.85.0
+   - 提供 VS Code 扩展 API 的类型定义
 
-### Development Scripts
+### 开发脚本
 
 ```json
 {
@@ -42,82 +42,81 @@ Terminal Copy Helper is a lightweight VS Code extension that sends selected text
 }
 ```
 
-## AI-Assisted Development
+## AI 辅助开发
 
-### Code Generation and Optimization
+### 代码生成和优化
 
-- **Intelligent Code Completion**: Use AI to generate TypeScript code
-- **Error Fixing**: Automatically detect and fix code issues
-- **Documentation Generation**: Automatically generate code comments and documentation
+- **智能代码补全**: 使用 AI 生成 TypeScript 代码
+- **错误修复**: 自动检测并修复代码问题
+- **文档生成**: 自动生成代码注释和文档
 
-### Project Management
+### 项目管理
 
-- **Task Planning**: Use AI to analyze requirements and plan development tasks
-- **Code Review**: AI-assisted code quality checking
-- **Dependency Management**: Intelligent recommendation and updating of project dependencies
+- **任务规划**: 使用 AI 分析需求并规划开发任务
+- **代码审查**: AI 辅助代码质量检查
+- **依赖管理**: 智能推荐和更新项目依赖
 
-## Extension Features
+## 扩展功能
 
-### Core Features
+### 核心特性
 
-1. **Text Selection Reading**
+1. **文本选择读取**
 
-   - Supports single or multiple selected text segments
-   - Automatically extracts relative paths and line number information
+   - 支持单个或多个选中的文本片段
+   - 自动提取相对路径和行号信息
 
-2. **Terminal Integration**
+2. **剪贴板集成**
 
-   - Automatically sends formatted content to the active terminal
-   - Wraps raw text in triple quotes for easy pasting and sharing
+   - 自动将格式化的内容复制到剪贴板
+   - 使用三引号包裹原始文本，便于粘贴和分享
 
-3. **User Interface Integration**
-   - Right-click menu integration
-   - Command palette support
-   - Keyboard shortcut: `Cmd + Alt + K` (macOS) / `Ctrl + Alt + K` (Windows/Linux)
+3. **用户界面集成**
+   - 右键菜单集成
+   - 命令面板支持
 
-## Deployment and Distribution
+## 部署和分发
 
-### Build Process
+### 构建流程
 
-1. **Compilation**: Use TypeScript compiler to generate JavaScript code
-2. **Packaging**: Use VSCE (Visual Studio Code Extension) tool to create .vsix package
-3. **Installation**: Install locally or publish to VS Code Marketplace
+1. **编译**: 使用 TypeScript 编译器生成 JavaScript 代码
+2. **打包**: 使用 VSCE (Visual Studio Code Extension) 工具创建 .vsix 包
+3. **安装**: 本地安装或发布到 VS Code 市场
 
-#### Packaging Steps
+#### 打包步骤
 
 ```bash
-# Install VSCE globally (if not already installed)
+# 全局安装 VSCE（如果尚未安装）
 npm install -g @vscode/vsce
 
-# Compile the extension
+# 编译扩展
 npm run compile
 
-# Create the VSIX package
+# 创建 VSIX 包
 vsce package
 
-# Install locally (optional)
-code --install-extension code-to-cli-0.0.1.vsix
+# 本地安装（可选）
+code --install-extension code-copy-helper-0.0.1.vsix
 ```
 
-#### Publishing Steps
+#### 发布步骤
 
-- Update the `publisher` field in `package.json` with your actual publisher ID
-- Create a publisher account on the VS Code Marketplace
-- Use `vsce publish` to publish to the marketplace (requires authentication)
+- 在 `package.json` 中更新 `publisher` 字段为你的实际发布者 ID
+- 在 VS Code 市场创建发布者账号
+- 使用 `vsce publish` 发布到市场（需要身份验证）
 
-### Quality Assurance
+### 质量保证
 
-- **Type Checking**: TypeScript static type checking
-- **Code Formatting**: Maintain consistent code style
-- **Testing**: Unit tests and integration tests (planned)
+- **类型检查**: TypeScript 静态类型检查
+- **代码格式化**: 保持一致的代码风格
+- **测试**: 单元测试和集成测试（计划中）
 
-## Future Expansion Plans
+## 未来扩展计划
 
-- Add more output format options
-- Support custom templates
-- Integrate with more IDEs and terminal tools
-- Add configuration options and user preferences
+- 添加更多输出格式选项
+- 支持自定义模板
+- 集成更多 IDE 和工具
+- 添加配置选项和用户偏好设置
 
-## Notes
+## 注意事项
 
-- Keep use English for all documentation and comments.
+- 所有文档和注释使用中文编写

@@ -1,7 +1,7 @@
 {
-  "name": "code-to-cli",
-  "displayName": "Code to CLI",
-  "description": "Send selected text snippets and location info to the active terminal",
+  "name": "code-copy-helper",
+  "displayName": "代码复制助手",
+  "description": "将选中的代码片段及其路径和行号信息复制到剪贴板",
   "version": "0.0.1",
   "publisher": "yangtian20231",
   "repository": {
@@ -13,30 +13,21 @@
     "vscode": "^1.85.0"
   },
   "categories": [
-    "AI",
-    "Keymaps"
+    "Other"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "terminalCopy.copySelectionToTerminal",
-        "title": "Code to CLI"
-      }
-    ],
-    "keybindings": [
-      {
-        "command": "terminalCopy.copySelectionToTerminal",
-        "key": "ctrl+alt+k",
-        "mac": "cmd+alt+k",
-        "when": "editorTextFocus"
+        "command": "codeCopy.copySelectionToClipboard",
+        "title": "复制代码（含路径和行号）"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "command": "terminalCopy.copySelectionToTerminal",
-          "group": "navigation@9",
+          "command": "codeCopy.copySelectionToClipboard",
+          "group": "9_cutcopypaste@100",
           "when": "editorHasSelection"
         }
       ]

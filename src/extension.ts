@@ -1,10 +1,10 @@
 import * as vscode from 'vscode';
 
-// Create output channel for logging
+// 创建输出通道用于日志记录
 let outputChannel: vscode.OutputChannel;
 
 /**
- * Log messages to the output channel
+ * 记录消息到输出通道
  */
 function log(message: string) {
   const timestamp = new Date().toLocaleTimeString();
@@ -14,43 +14,35 @@ function log(message: string) {
 }
 
 /**
- * Called when the extension is activated
+ * 扩展激活时调用
  */
 export function activate(context: vscode.ExtensionContext) {
-  // Create output channel for logging
-  outputChannel = vscode.window.createOutputChannel('Terminal Copy Helper');
+  // 创建日志输出通道
+  outputChannel = vscode.window.createOutputChannel('代码复制助手');
   context.subscriptions.push(outputChannel);
   
-  log('✓ Terminal Copy Helper extension activated');
+  log('✓ 代码复制助手扩展已激活');
   
   const disposable = vscode.commands.registerCommand(
-    'terminalCopy.copySelectionToTerminal',
-    () => {
-      log('--- Command triggered ---');
+    'codeCopy.copySelectionToClipboard',
+    async () => {
+      log('--- 命令已触发 ---');
       
       const editor = vscode.window.activeTextEditor;
       if (!editor) {
-        log('✗ No active editor detected');
-        vscode.window.showWarningMessage('No active editor detected. Please open the file you want to operate on.');
+        log('✗ 未检测到活动编辑器');
+        vscode.window.showWarningMessage('未检测到活动编辑器，请打开要操作的文件。');
         return;
       }
-      log(`✓ Active editor: ${editor.document.fileName}`);
+      log(`✓ 活动编辑器: ${editor.document.fileName}`);
 
       const selections = editor.selections.filter((selection) => !selection.isEmpty);
       if (selections.length === 0) {
-        log('✗ No text selected');
-        vscode.window.showWarningMessage('Please select the text you want to send to the terminal first.');
+        log('✗ 未选择文本');
+        vscode.window.showWarningMessage('请先选择要复制的文本。');
         return;
       }
-      log(`✓ Found ${selections.length} selection(s)`);
-
-      const terminal = vscode.window.activeTerminal;
-      if (!terminal) {
-        log('✗ No active terminal found');
-        vscode.window.showWarningMessage('No active terminal found. Please open and activate a terminal first.');
-        return;
-      }
-      log(`✓ Active terminal: ${terminal.name}`);
+      log(`✓ 找到 ${selections.length} 个选区`);
 
       const relativePath = vscode.workspace.asRelativePath(editor.document.uri, false);
       const payload = selections
@@ -61,23 +53,23 @@ export function activate(context: vscode.ExtensionContext) {
           const rawText = editor.document.getText(selection).replace(/\r/g, '');
           const normalizedText = rawText.endsWith('\n') ? rawText : `${rawText}\n`;
 
-          log(`  - Selection: ${relativePath} (${rangeLabel})`);
+          log(`  - 选区: ${relativePath} (${rangeLabel})`);
           return `File: ${relativePath} (${rangeLabel})\nContent as below:\n"""\n${normalizedText}"""`;
         })
         .join('\n\n');
 
-      terminal.sendText(payload, true);
-      log('✓ Text sent to terminal successfully');
-      vscode.window.showInformationMessage('Selected text has been sent to the terminal.');
+      await vscode.env.clipboard.writeText(payload);
+      log('✓ 文本已成功复制到剪贴板');
+      vscode.window.showInformationMessage('已将选中文本复制到剪贴板。');
     }
   );
 
   context.subscriptions.push(disposable);
-  log('✓ Command registered: terminalCopy.copySelectionToTerminal');
+  log('✓ 命令已注册: codeCopy.copySelectionToClipboard');
 }
 
 /**
- * Called when the extension is deactivated
+ * 扩展停用时调用
  */
 export function deactivate() {}
 

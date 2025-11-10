@@ -1,100 +1,103 @@
-# Terminal Copy Helper
+# 代码复制助手 (Code Copy Helper)
 
-A lightweight VS Code extension that sends selected text snippets along with file path and line number information to the currently active terminal.
+一个轻量级的 VS Code 扩展，将选中的代码片段及其文件路径和行号信息复制到剪贴板。
 
-## Features
+## 功能特性
 
-- Reads one or multiple selected text segments from the active editor
-- Automatically generates relative path and start/end line number descriptions
-- Wraps raw text in triple quotes for easy terminal pasting or sharing
+- 读取编辑器中一个或多个选中的文本片段
+- 自动生成相对路径和起止行号描述
+- 使用三引号包裹原始文本，便于粘贴和分享
 
-## Usage
+## 使用方法
 
-1. Open your target project in VS Code and ensure there's at least one active terminal
-2. Select the code/text you want to share or execute
-3. Right-click and choose `Copy to Terminal (with path and line numbers)`, or use the keyboard shortcut `Cmd + Alt + K` (macOS) / `Ctrl + Alt + K` (Windows/Linux), or search for the same command in the command palette
-4. Check the automatically filled content in the terminal
+1. 在 VS Code 中打开你的项目
+2. 选择你想要复制的代码或文本
+3. 右键选择 `复制代码（含路径和行号）`，或在命令面板中搜索该命令
+4. 内容已复制到剪贴板，可以粘贴到任何地方
 
-## Compatible CLI Tools
+## 使用场景
 
-This extension is designed to work seamlessly with various AI-powered CLI coding assistants, allowing you to easily share code snippets with contextual information (file path and line numbers) to the terminal. Here are some popular CLI tools that benefit from this extension:
+此扩展适用于以下场景：
 
-### Agentic AI Coding Assistants
+- **AI 辅助编程**: 将代码片段复制到 ChatGPT、Claude、Copilot Chat 等 AI 助手进行代码审查、调试或优化
+- **代码分享**: 快速将代码及其上下文信息分享给同事或在技术论坛中提问
+- **文档编写**: 将代码片段及其位置信息复制到文档中
+- **问题报告**: 在 bug 报告或 issue 中包含准确的代码位置信息
 
-- **GitHub Copilot CLI**: Send code snippets with path and line information for AI-assisted code review, debugging, and PR creation
-- **Claude Code**: Share code context for complex refactoring, multi-file operations, and automated testing
-- **OpenAI Codex CLI**: Provide code with location info for local AI-assisted development and iterative improvements
-- **Google Gemini CLI**: Transfer code snippets for AI-powered code generation and documentation with real-time web search integration
-- **Amazon Q Developer CLI**: Share code for AWS-specific development assistance and cloud resource optimization
-- **Cursor CLI**: Send contextual code information for cross-file modifications and automated testing
-- **Qodo Command (Gen CLI)**: Provide code context for custom AI agent workflows and automated code reviews
+## 输出格式示例
 
-### Open Source CLI Coding Assistants
+当你选择一段代码并使用此扩展时，复制到剪贴板的内容格式如下：
 
-- **aider**: Share code snippets for AI pair programming, automatic git commits, and cross-file refactoring
-- **OpenCode**: Send code with path information for terminal-based AI coding with LSP integration
-- **smol-developer**: Provide code context for AI-generated project scaffolding and prototyping
+```
+File: src/extension.ts (Lines 15-20)
+Content as below:
+"""
+export function activate(context: vscode.ExtensionContext) {
+  // 创建日志输出通道
+  outputChannel = vscode.window.createOutputChannel('代码复制助手');
+  context.subscriptions.push(outputChannel);
+}
+"""
+```
 
-This extension essentially provides a keyboard shortcut and context menu option to insert selected code snippets into the active terminal with path and line number information. Since it simply outputs formatted text to the terminal, it works with any CLI tool or command that can process text input, including all the AI coding assistants mentioned above. The triple-quote formatting makes it easy to paste and share multi-line code snippets in any terminal environment.
-
-## Development and Debugging
+## 开发和调试
 
 ```bash
 npm install
 npm run watch
 ```
 
-Then use VS Code's `Run Extension` debug configuration to test the functionality in a new Extension Host instance.
+然后使用 VS Code 的 `Run Extension` 调试配置在新的扩展宿主实例中测试功能。
 
-## Installation and Packaging
+## 安装和打包
 
-### Installing the Extension
+### 安装扩展
 
-#### Method 1: From VS Code Marketplace
+#### 方法一：从 VS Code 市场安装
 
-1. Open VS Code
-2. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
-3. Search for "Terminal Copy Helper"
-4. Click Install
+1. 打开 VS Code
+2. 进入扩展页面（Ctrl+Shift+X / Cmd+Shift+X）
+3. 搜索 "代码复制助手"
+4. 点击安装
 
-#### Method 2: Manual Installation from VSIX Package
+#### 方法二：从 VSIX 包手动安装
 
-##### Step 1: Install VSCE Tool (if not already installed)
+##### 步骤 1：安装 VSCE 工具（如果尚未安装）
 
 ```bash
 npm install -g @vscode/vsce
 ```
 
-##### Step 2: Package the Extension
+##### 步骤 2：打包扩展
 
 ```bash
-# Compile the TypeScript code
+# 编译 TypeScript 代码
 npm run compile
 
-# Create the VSIX package
+# 创建 VSIX 包
 vsce package
 ```
 
-This will generate a `.vsix` file (e.g., `code-to-cli-0.0.1.vsix`) in the project root.
+这将在项目根目录生成一个 `.vsix` 文件（例如 `code-copy-helper-0.0.1.vsix`）。
 
-##### Step 3: Install the VSIX Package
+##### 步骤 3：安装 VSIX 包
 
 ```bash
-# Install locally in VS Code
-code --install-extension code-to-cli-0.0.1.vsix
+# 在 VS Code 中本地安装
+code --install-extension code-copy-helper-0.0.1.vsix
 ```
 
-Or manually:
+或手动安装：
 
-1. Open VS Code
-2. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
-3. Click the "..." menu in the top-right corner
-4. Select "Install from VSIX..."
-5. Choose the generated `.vsix` file
+1. 打开 VS Code
+2. 进入扩展页面（Ctrl+Shift+X / Cmd+Shift+X）
+3. 点击右上角的 "..." 菜单
+4. 选择 "从 VSIX 安装..."
+5. 选择生成的 `.vsix` 文件
 
-## Publishing Preparation
+## 发布准备
 
-- Update the `publisher` field in `package.json` with your actual publisher ID
-- Test the extension thoroughly before publishing
-- Create a publisher account on the VS Code Marketplace if you haven't already
-- Use `vsce publish` to publish to the marketplace (requires authentication)
+- 在 `package.json` 中更新 `publisher` 字段为你的实际发布者 ID
+- 在发布前充分测试扩展
+- 如果还没有 VS Code 市场的发布者账号，需要先创建一个
+- 使用 `vsce publish` 发布到市场（需要身份验证）
